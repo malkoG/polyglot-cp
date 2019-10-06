@@ -1,0 +1,7 @@
+[2019-05-16 22:01:33] Debug: EasyRPG Player 0.6.0 started
+[2019-05-16 22:01:33] Debug: ============================
+[2019-05-16 22:01:33] Debug: Seeded the RNG with 1558011692.
+[2019-05-16 22:01:33] Debug: CLI: 
+[2019-05-16 22:01:33] Debug: Opened audio at 44100 Hz (stereo), format: S16LSB
+[2019-05-16 22:01:34] Debug: Framerate is 0 FPS!
+[2019-05-16 22:01:45] Warning: Removing invalid party member 1

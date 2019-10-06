@@ -4,10 +4,6 @@ import java.util.Collections
 
 typealias Index = Int
 
-/*
- * value 이상인 값들이 나타나는 처음 위치를 반환
- * 
- */
 fun lower_bound(subsets: ArrayList<Int>,
 				low: Index,
 				high: Index,
@@ -30,10 +26,6 @@ fun lower_bound(subsets: ArrayList<Int>,
 	return lo
 }
 
-/*
- * value를 넘는 값들이 나타나는 처음 위치를 반환
- * 
- */
 fun upper_bound(subsets: ArrayList<Int>,
 				low: Index,
 				high: Index,
@@ -64,72 +56,30 @@ fun equal_range(subsets: ArrayList<Int>,
 }
 
 fun main(args: Array<String>) = with(Scanner(System.`in`)) {
+
 	val N = nextInt()
-	val S = nextInt()
-
-	val h = N shr 1
+	val arr = Array(N) { nextInt() }
 	
-	var leftHalf = ArrayList<Int>()
-	var rightHalf = ArrayList<Int>()
+	var sums = ArrayList<Int>()
 
-	var sequence = Array(N) { 0 }
-	for (i in 0..N-1)
-		sequence[i] = nextInt()
-	
-	for (i in 0L..((1 shl (N-h))- 1)) {
-		var subset = i
-		var result = 0
-		for (j in 0..N-h-1) {
-			if((subset % 2L) == 1L)
-				result += sequence[h + j]
-			subset = subset shr 1
+	for (x in 0..N-1) {
+		for (y in 0..N-1) {
+			sums.add(arr[x]+arr[y])
 		}
-
-		rightHalf.add(result)
 	}
 
-	for (i in 0..((1 shl h) - 1)) {
-		var subset = i
-		var result = 0
-		for (j in 0..h-1) {
-			if((subset % 2L) == 1L)
-				result += sequence[j]
-			subset = subset shr 1
+	sums.sort()
+
+	var ans = 0
+	for (k in 0..N-1) {
+		for (z in 0..N-1) {
+			val (lower, upper) = equal_range(sums, 0, sums.size, arr[k]-arr[z])
+			if (lower != upper) {
+				if(ans < arr[k])
+					ans = arr[k]
+			}
 		}
-
-		leftHalf.add(result)
 	}
 
-	Collections.sort(rightHalf)
-/*
-	println("left Sum")
-	for (leftSum in leftHalf) {
-		print(leftSum)
-		print(" ")
-	}
-	
-	println("")
-	println("right Sum")
-	for (rightSum in rightHalf) {
-		print(rightSum)
-		print(" ")
-	}
-
-	println(" ")
-*/
-	var ans = 0L
-	for (leftSum in leftHalf) {
-		val (lower,upper) = equal_range(rightHalf, 0, 1 shl (N-h), S-leftSum)
-/*		print(lower)
-		print(" ")
-		print(upper)
-		println("")
-*/		ans += upper-lower	
-	}
-
-	if (S == 0) {
-		println(ans - 1)
-	} else {
-		println(ans)
-	}
+	println(ans)
 }
