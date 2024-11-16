@@ -1,9 +1,5 @@
-# Baekjoon Online Judge Polyglot Programming Challenge
+C++ 없이 백준풀기 도즈언.......
 
-* Challenge #1 : Implementation
-  * Implementing with default data structure
-* Challenge #2 : Stack & Queue
-* Challenge #3 : DFS & BFS
-* Challenge #4 : Sort & Binary Search
-* Challenge #5 : Dynamic Programming
-* Challenge #6 : Greedy Approach
+## 2024-11-16
+
+* [17127](./BruteForce/17127.py) -- solved using python
