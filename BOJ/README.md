@@ -10,3 +10,8 @@ C++ 없이 백준풀기 도즈언.......
 * [31403](./Implementation/31403.lua) -- solved using lua
 * [28065](./Implementation/28065.lua) -- solved using lua
 * [21736](./DFS/21736.lua) -- solved using lua
+
+## 2024-12-08 
+
+* [14308](./Implementation/14308.lua) -- solved using lua
+* [1303](./DFS/1303.lua) -- solved using lua
