@@ -15,3 +15,7 @@ C++ 없이 백준풀기 도즈언.......
 
 * [14308](./Implementation/14308.lua) -- solved using lua
 * [1303](./DFS/1303.lua) -- solved using lua
+
+## 2024-12-10
+
+* [1099](./DynamicProgramming/1099.lua) -- solved using lua
